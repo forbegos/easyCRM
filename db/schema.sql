@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS easycrm_db;
+CREATE DATABASE easycrm_db;
