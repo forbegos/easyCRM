@@ -19,11 +19,34 @@ Client.init(
         isAlphanumeric: true,
       },
     },
-    revenue: {
-      type: DataTypes.INTEGER,
+    phone: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+      unique: true,
       validate: {
-        isFloat: true,
+        len: [10],
       },
+    },
+
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlphanumeric: true,
+      },
+    },
+
+    website: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true,
+      },
+    },
+
+    revenue: {
+      type: DataTypes.FLOAT,
+
+      defaultValue: 0.0,
     },
     owner: {
       type: DataTypes.INTEGER,

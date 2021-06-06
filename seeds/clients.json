@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Newmont",
+    "phone": 7201111111,
+    "address": "Dummy St. 1001, Denver, CO. 80203",
+    "website": "https://www.newmont.com"
+  },
+  {
+    "name": "Barrick",
+    "phone": 7201112222,
+    "address": "Dummy St. 1002, Denver, CO. 80203",
+    "website": "https://www.barrick.com"
+  },
+  {
+    "name": "Goldcorp",
+    "phone": 7201113333,
+    "address": "Dummy St. 1003, Denver, CO. 80203",
+    "website": "https://www.goldcorp.com"
+  },
+  {
+    "name": "Bisa",
+    "phone": 7201114444,
+    "address": "Dummy St. 1004, Denver, CO. 80203",
+    "website": "https://www.bisa.com"
+  }
+]

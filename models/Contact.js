@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Lead extends Model {}
+class Contact extends Model {}
 
-Lead.init(
+Contact.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,14 +11,13 @@ Lead.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    description: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    hours: {
-      type: DataTypes.INTEGER,
+    position: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 0,
     },
     owner: {
       type: DataTypes.INTEGER,
@@ -40,8 +39,8 @@ Lead.init(
     freezeTableName: true,
     underscored: true,
     timestamps: false,
-    modelName: "lead",
+    modelName: "contact",
   }
 );
 
-module.exports = Lead;
+module.exports = Contact;
