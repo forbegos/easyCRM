@@ -42,16 +42,10 @@ Client.init(
         isUrl: true,
       },
     },
-
-    revenue: {
-      type: DataTypes.FLOAT,
-
-      defaultValue: 0.0,
-    },
-    owner: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "User",
+        model: "user",
         key: "id",
       },
     },
@@ -61,7 +55,7 @@ Client.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Client",
+    modelName: "client",
   }
 );
 

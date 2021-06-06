@@ -20,14 +20,14 @@ Lead.init(
       allowNull: false,
       defaultValue: 0,
     },
-    owner: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
     },
-    client: {
+    client_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "client",

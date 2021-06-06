@@ -22,15 +22,13 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Task.bulkCreate(taskData);
-
   await Client.bulkCreate(clientData);
+  await Contact.bulkCreate(contactData);
 
+  await Task.bulkCreate(taskData);
   await Lead.bulkCreate(leadData);
 
   await Product.bulkCreate(productData);
-
-  await Contact.bulkCreate(contactData);
 
   process.exit(0);
 };

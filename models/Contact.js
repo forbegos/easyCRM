@@ -19,14 +19,14 @@ Contact.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    owner: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
     },
-    client: {
+    client_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "client",

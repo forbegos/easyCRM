@@ -20,10 +20,17 @@ Task.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    taskOwner: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "User",
+        model: "user",
+        key: "id",
+      },
+    },
+    client_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "client",
         key: "id",
       },
     },
