@@ -21,6 +21,10 @@ router.get("/dashboard", async (req, res) => {
           model: User,
           attributes: ["username"],
         },
+        {
+          model: Client,
+          attributes: ["name"],
+        },
       ],
     });
     const taskData = await Task.findAll({

@@ -1,6 +1,8 @@
 [
   {
     "description": "Front end development opportunity",
-    "hours": 20
+    "hours": 20,
+    "user_id": 1,
+    "client_id": 2
   }
 ]

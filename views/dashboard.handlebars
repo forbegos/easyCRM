@@ -36,7 +36,9 @@
             <div class="card" style="width: 500px">
                     {{#each leads as |lead|}}
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{lead.id}} {{lead.description}} {{lead.hours}} {{lead.user.username}}</li>
+                    <li class="list-group-item">{{lead.id}} {{lead.description}} {{lead.hours}} {{lead.user.username}} {{lead.client.name}}
+
+                    </li>
               
                 </ul>
                 {{/each}}
