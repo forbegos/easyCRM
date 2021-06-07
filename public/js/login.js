@@ -4,8 +4,8 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector("#inputEmail").value.trim();
   const password = document.querySelector("#inputPassword").value.trim();
-  //   console.log(email);
-  //   console.log(password);
+  console.log(email);
+  console.log(password);
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }

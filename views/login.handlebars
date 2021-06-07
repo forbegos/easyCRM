@@ -1,9 +1,8 @@
 <div class="row">
-  <div class="login-form">
-    <div class="logo">
+      <div class="logo">
       <img class="logoimg" src="/assets/easyCRMLogo.png" alt="easyCRM logo" />
     </div>
-    <form>
+    <form class="form login-form">
       <div class="mb-3">
         <label for="inputEmail" class="form-label">Email address</label>
         <input
@@ -20,10 +19,9 @@
         <label for="inputPassword" class="form-label">Password</label>
         <input type="password" class="form-control" id="inputPassword" />
       </div>
-      <div class="buttons">
-
-        <a class="btn btn-primary" href="/dashboard"> Submit</a>
-        <a class="btn btn-primary" href="/register"> Register</a>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Login</button>
+        <a class = "btn btn-primary" href="/register">Register</a>
       </div>
     </form>
   </div>

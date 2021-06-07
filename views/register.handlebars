@@ -1,13 +1,12 @@
 <div class="row">
-  <div class="login-form">
     <div class="logo">
       <img class="logoimg" src="/assets/easyCRMLogo.png" alt="easyCRM logo" />
     </div>
-    <form>
+    <form class="form register-form">
       <div class="mb-3">
         <label for="creatUserName" class="form-label">Username</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
           id="creatUserName"
           aria-describedby="userNameHelp"
@@ -42,8 +41,10 @@
           and must not contain spaces, special characters, or emoji.
         </div>
       </div>
-
-      <a class="btn btn-primary" href="/register"> Register</a>
-    </form>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Register</button>
+      </div>    
+      </form>
   </div>
 </div>
+<script src="./js/register.js"></script>

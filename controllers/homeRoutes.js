@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   console.log("running dashboard get");
   try {
     const leadData = await Lead.findAll({
@@ -41,8 +41,8 @@ router.get("/dashboard", async (req, res) => {
     });
     const leads = leadData.map((entry) => entry.get({ plain: true }));
     const tasks = taskData.map((entry) => entry.get({ plain: true }));
-    console.log(tasks);
-    console.log(leads);
+    // console.log(tasks);
+    // console.log(leads);
     res.render("dashboard", {
       leads,
       tasks,

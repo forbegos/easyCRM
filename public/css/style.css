@@ -2,8 +2,14 @@
   width: 500px;
   margin: 0 auto;
 }
+.register-form {
+  width: 500px;
+  margin: 0 auto;
+}
 
-.logoimg {
+.logo {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   padding-left: 80px;
   padding-bottom: 70px;

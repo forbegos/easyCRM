@@ -22,7 +22,7 @@ User.init(
       allowNull: false,
       validate: {
         isAlphanumeric: true,
-        len: [8],
+        // len: [8],
       },
     },
     email: {
