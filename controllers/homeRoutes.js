@@ -28,7 +28,16 @@ router.get("/dashboard", async (req, res) => {
       ],
     });
     const taskData = await Task.findAll({
-      include: [{ model: User, attributes: ["username"] }],
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Client,
+          attributes: ["name"],
+        },
+      ],
     });
     const leads = leadData.map((entry) => entry.get({ plain: true }));
     const tasks = taskData.map((entry) => entry.get({ plain: true }));

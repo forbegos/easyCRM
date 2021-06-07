@@ -20,6 +20,11 @@ Lead.init(
       allowNull: false,
       defaultValue: 0,
     },
+    revenue: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+      defaultValue: 0.0,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
