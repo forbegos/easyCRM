@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="login-form">
+    <div class="logo">
+      <img class="logoimg" src="/assets/easyCRMLogo.png" alt="easyCRM logo" />
+    </div>
+    <form>
+      <div class="mb-3">
+        <label for="creatUserName" class="form-label">Username</label>
+        <input
+          type="email"
+          class="form-control"
+          id="creatUserName"
+          aria-describedby="userNameHelp"
+        />
+        <div id="userNameHelp" class="form-text">
+          Your username must be 8 characters long, contain letters and numbers,
+          and must not contain spaces, special characters, or emoji.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="creatEmail" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="creatEmail"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="createPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="createPassword"
+          aria-describedby="passwordHelp"
+        />
+        <div id="passwordHelp" class="form-text">
+          Your password must be 8 characters long, contain letters and numbers,
+          and must not contain spaces, special characters, or emoji.
+        </div>
+      </div>
+
+      <a class="btn btn-primary" href="/register"> Register</a>
+    </form>
+  </div>
+</div>

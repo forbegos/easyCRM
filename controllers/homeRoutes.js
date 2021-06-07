@@ -52,4 +52,12 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
+router.get("/register", async (req, res) => {
+  try {
+    res.render("register");
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
 module.exports = router;
