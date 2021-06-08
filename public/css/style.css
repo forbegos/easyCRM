@@ -45,7 +45,7 @@
 }
 
 .card {
-  /* border: solid red 1px; */
+  border: none;
   padding: 20px;
   text-align: center;
   margin: 0 auto;

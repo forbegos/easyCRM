@@ -12,6 +12,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/lead", withAuth, async (req, res) => {
+  try {
+    res.render("lead");
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
+router.get("/task", withAuth, async (req, res) => {
+  try {
+    res.render("task");
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
 router.get("/dashboard", withAuth, async (req, res) => {
   console.log("running dashboard get");
   try {
