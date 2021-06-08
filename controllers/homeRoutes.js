@@ -12,17 +12,78 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/lead", withAuth, async (req, res) => {
+router.get("/clients", withAuth, async (req, res) => {
   try {
-    res.render("lead");
+    const clientData = await Client.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+    const clients = clientData.map((entry) => entry.get({ plain: true }));
+    res.render("client", {
+      clients,
+    });
   } catch (err) {
     res.status(404).json(err);
   }
 });
 
-router.get("/task", withAuth, async (req, res) => {
+router.get("/updatelead/:id", withAuth, async (req, res) => {
   try {
-    res.render("task");
+    const leadData = await Lead.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Client,
+          attributes: ["name"],
+        },
+      ],
+    });
+    const lead = leadData.get({ plain: true });
+    console.log(lead);
+
+    res.render("updatelead", {
+      lead,
+    });
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
+router.get("/deletelead/:id", withAuth, async (req, res) => {
+  try {
+    const leadData = await Lead.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+        {
+          model: Client,
+          attributes: ["name"],
+        },
+      ],
+    });
+    const lead = leadData.get({ plain: true });
+    console.log(lead);
+
+    res.render("deletelead", {
+      lead,
+    });
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
+router.get("/updatetask", withAuth, async (req, res) => {
+  try {
+    res.render("updatetask");
   } catch (err) {
     res.status(404).json(err);
   }

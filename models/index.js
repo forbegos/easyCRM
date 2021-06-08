@@ -31,6 +31,15 @@ Client.hasMany(Lead, {
   onDelete: "CASCADE",
 });
 
+Client.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+User.hasMany(Client, {
+  foreignKey: "user_id",
+});
+
 Lead.belongsTo(User, {
   foreignKey: "user_id",
 });

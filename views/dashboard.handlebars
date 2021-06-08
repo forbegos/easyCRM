@@ -56,7 +56,8 @@
                   <td>${{lead.revenue}}</td>
                   <td>{{lead.client.name}}</td>
                   <td>{{lead.user.username}}</td>
-                  <td><a href="http://www.google.com"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> <a href="http://www.yahoo.com"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
+                  <td><a href="./updatelead/{{lead.id}}"><img src="/assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
+                  <a href="./deletelead/{{lead.id}}"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
                 </tr>
                 {{/each}}
               </tbody>

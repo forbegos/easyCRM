@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid" style="background-color: white; border-bottom: solid grey 1px; align-items: center;">
+        <div class="dashboard-logo">
+          <img
+            src="../assets/easyCRMLogo.png"
+            style="height: 100px; padding-bottom: 10px;"
+            alt=""
+          />
+        </div>
+        <div class="page-title">
+          <h3>Update Lead</h3>
+        </div>
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="/dashboard" role = "button">Dashboard</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="#" role = "button">Clients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="#" role = "button">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="/" role = "button">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="update-lead-display">
+
+<div class="card lead-card" style=" width: 36rem; text-align: left;">  
+    <div class="card-body">
+      <h5 class="card-title">Lead # {{lead.id}}</h5>
+
+      <p class="description"><span>Description: </span>{{lead.description}}</p>
+      <p><span>Hours: </span>{{lead.hours}}</p>
+      <p><span>Revenue:</span>${{lead.revenue}}</p>
+      <p><span>Client: </span>{{lead.client.name}}</p>
+      <p><span>Owner: </span> {{lead.user.username}}</p>
+    </div>
+  </div>
+
+
+<div class="card lead-card" style="width: 36rem; text-align: left">
+  <div class="card-body">
+    <h5 class="card-title">Update Lead:{{lead.id}} </h5>
+
+    <form class="form update-lead">
+      
+      <div class="form-group">
+        <label for="update-desc" >Description</label>
+        <textarea class="form-input" type="text" id="update-desc" name = "update-desc" style="width: 400px"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="update-hours" >Total Hours</label>
+        <input class="form-input" type="number" id="update-hours" name = "update-hours" style="width: 400px" />
+      </div>
+      
+      <div class="form-group">
+        <label for="update-revenue" >Revenue</label>
+        <input class="form-input"  type="number" id="update-revenue" name="update-revenue" style="width: 400px" />
+      </div>
+    
+    <button class="btn btn-sm btn-primary" data-id="{{lead.id}}">Update</button>
+    </form>
+    
+
+    
+  </div>
+</div>
+
+    </div>
+
+<script src="../js/leadupdate.js"></script>  

@@ -28,24 +28,21 @@
         </div>
       </div>
     </nav>
-<div class="card lead-card" style="width: 18rem; text-align: left">
-  <div class="card-body">
-    <h5 class="card-title">Update Lead</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Client: Somebody</h6>
-    <form class="update-lead">
-      <div class="mb-3">
-        <label for="update-desc" class="form-lable">Description</label>
-        <input type="text" id="update-desc" style="width: 400px" />
-      </div>
-      <div class="mb-3">
-        <label for="update-hours" class="form-lable">Total Hours</label>
-        <input type="text" id="update-hours" style="width: 400px" />
-      </div>
-      <div class="mb-3">
-        <label for="update-revenue" class="form-lable">Revenue</label>
-        <input type="text" id="update-revenue" style="width: 400px" />
-      </div>
-    </form>
-    <a href="#" class="btn btn-primary">Update</a>
+    <div class="update-lead-display">
+
+<div class="card lead-card" style=" width: 36rem; text-align: left;">  
+    <div class="card-body">
+      <h5 class="card-title">Lead # {{lead.id}}</h5>
+
+      <p class="description"><span>Description: </span>{{lead.description}}</p>
+      <p><span>Hours: </span>{{lead.hours}}</p>
+      <p><span>Revenue:</span>${{lead.revenue}}</p>
+      <p><span>Client: </span>{{lead.client.name}}</p>
+      <p><span>Owner: </span> {{lead.user.username}}</p>
+    </div>
   </div>
+<div class="delete-button">
+          <button class="btn btn-sm btn-danger" data-id="{{lead.id}}">DELETE</button>
 </div>
+
+<script src="../js/leaddelete.js"></script>
