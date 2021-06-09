@@ -90,7 +90,6 @@ router.get("/updatetask", withAuth, async (req, res) => {
 });
 
 router.get("/dashboard", withAuth, async (req, res) => {
-  console.log("running dashboard get");
   try {
     const leadData = await Lead.findAll({
       include: [
@@ -116,13 +115,19 @@ router.get("/dashboard", withAuth, async (req, res) => {
         },
       ],
     });
+
+    const userData = await User.findAll();
+
+    const users = userData.map((entry) => entry.get({ plain: true }));
     const leads = leadData.map((entry) => entry.get({ plain: true }));
     const tasks = taskData.map((entry) => entry.get({ plain: true }));
     // console.log(tasks);
     // console.log(leads);
+    console.log(users);
     res.render("dashboard", {
       leads,
       tasks,
+      users,
     });
   } catch (err) {
     res.status(404).json(err);
@@ -132,6 +137,26 @@ router.get("/dashboard", withAuth, async (req, res) => {
 router.get("/register", async (req, res) => {
   try {
     res.render("register");
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
+router.get("/createlead", withAuth, async (req, res) => {
+  try {
+    const clientData = await Client.findAll();
+    const userData = await User.findAll();
+
+    const clients = clientData.map((entry) => entry.get({ plain: true }));
+    const users = userData.map((entry) => entry.get({ plain: true }));
+
+    console.log(clients);
+    console.log(users);
+
+    res.render("createlead", {
+      clients,
+      users,
+    });
   } catch (err) {
     res.status(404).json(err);
   }

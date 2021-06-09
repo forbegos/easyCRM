@@ -28,9 +28,10 @@
         </div>
       </div>
     </nav>
-    <div class="update-lead-display">
 
-<div class="card lead-card" style=" width: 36rem; text-align: left;">  
+<div class="display">
+
+  <div class="card lead-card" style=" width: 36rem; text-align: left;">  
     <div class="card-body">
       <h5 class="card-title">Lead # {{lead.id}}</h5>
 
@@ -43,35 +44,31 @@
   </div>
 
 
-<div class="card lead-card" style="width: 36rem; text-align: left">
+  <div class="card lead-card" style="width: 36rem; text-align: left">
   <div class="card-body">
-    <h5 class="card-title">Update Lead:{{lead.id}} </h5>
+    <h5 class="card-title">Update Lead # {{lead.id}} </h5>
 
     <form class="form update-lead">
       
       <div class="form-group">
-        <label for="update-desc" >Description</label>
+        <label for="update-desc" ><span>Description:</span></label>
         <textarea class="form-input" type="text" id="update-desc" name = "update-desc" style="width: 400px"></textarea>
       </div>
       
       <div class="form-group">
-        <label for="update-hours" >Total Hours</label>
+        <label for="update-hours" ><span>Total Hours:</span></label>
         <input class="form-input" type="number" id="update-hours" name = "update-hours" style="width: 400px" />
       </div>
       
       <div class="form-group">
-        <label for="update-revenue" >Revenue</label>
+        <label for="update-revenue"><span>Revenue:</span></label>
         <input class="form-input"  type="number" id="update-revenue" name="update-revenue" style="width: 400px" />
       </div>
     
-    <button class="btn btn-sm btn-primary" data-id="{{lead.id}}">Update</button>
+      <button class="btn btn-sm btn-primary" data-id="{{lead.id}}">Update</button>
     </form>
-    
-
-    
+  </div>
   </div>
 </div>
-
-    </div>
 
 <script src="../js/leadupdate.js"></script>  
