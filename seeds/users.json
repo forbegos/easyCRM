@@ -3,5 +3,15 @@
     "username": "forbegos",
     "email": "forbegos@mail.com",
     "password": "pass1234"
+  },
+  {
+    "username": "leo",
+    "email": "leo@mail.com",
+    "password": "pass1234"
+  },
+  {
+    "username": "ben",
+    "email": "ben@mail.com",
+    "password": "pass1234"
   }
 ]

@@ -40,7 +40,6 @@
 
                   <th scope="col">Website</th>
                   <th scope="col">Owner</th>
-                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,10 +50,11 @@
                   <td>{{client.phone}} hrs.</td>
                   <td>{{client.address}}</td>
                   <td><a href="{{client.website}}">{{client.website}}</a></td>
-                  <td>{{client.user.username}}</td>
-                  <td><a href="http://www.google.com"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> <a href="http://www.yahoo.com"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
+                  <td>{{user.username}}</td>
                 </tr>
                 {{/each}}
               </tbody>
             </table>
+                        <a href="#" class="btn btn-success">New Client</a>
+
           </div>
