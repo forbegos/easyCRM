@@ -4,7 +4,6 @@ const updateButtonHandler = async (event) => {
   const description = document.querySelector("#update-desc").value.trim();
   const hours = document.querySelector("#update-hours").value.trim();
   const revenue = document.querySelector("#update-revenue").value.trim();
-  const revenue = document.querySelector("#update-revenue").value.trim();
 
   const id = event.target.getAttribute("data-id");
   console.log(id);

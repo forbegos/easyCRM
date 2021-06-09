@@ -31,7 +31,7 @@ router.put("/update/:id", withAuth, async (req, res) => {
     });
 
     if (!leadData) {
-      res.status(404).json({ message: "No project found with this id!" });
+      res.status(404).json({ message: "No lead found with this id!" });
       return;
     }
 

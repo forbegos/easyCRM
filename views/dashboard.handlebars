@@ -84,16 +84,19 @@
               </thead>
               <tbody>
                    {{#each tasks as |task|}}
-                <tr class= "table-row"  onclick="document.location = 'http://www.google.com';">
+                <tr>
                   <td>{{task.id}}</td>
                   <td>{{task.content}}</td>
                   <td>{{format_date date}}</td>
                   <td>{{task.user.username}}</td>
                   <td>{{task.client.name}}</td>
-                  <td><a href="http://www.google.com"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> <a href="http://www.yahoo.com"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
+                  <td><a href="#"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
+                  <a href="#"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
                 </tr>
                 {{/each}}
               </tbody>
             </table>
+                        <a href="#" class="btn btn-success">New Task</a>
+
       </div>
    </div>

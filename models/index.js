@@ -8,13 +8,13 @@ User.hasMany(Task, {
   onDelete: "CASCADE",
 });
 
+Task.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
 Client.hasMany(Task, {
   foreignKey: "client_id",
   onDelete: "CASCADE",
-});
-
-Task.belongsTo(User, {
-  foreignKey: "user_id",
 });
 
 Task.belongsTo(Client, {
