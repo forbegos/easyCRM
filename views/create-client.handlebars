@@ -8,8 +8,7 @@
           />
         </div>
         <div class="page-title">
-          <h3>Create Lead</h3>
-          {{!-- <h4>User: {{user.username}}</h4> --}}
+          <h3>New Client</h3>
         </div>
           <ul class="nav navbar-nav">
             <li class="nav-item">
@@ -17,7 +16,7 @@
             </li>
             </li>
             <li class="nav-item">
-              <a class="nav-button" aria-current="page" href="./clients" role = "button">Clients</a>
+              <a class="nav-button" aria-current="page" href="/clients" role = "button">Clients</a>
             </li>
             <li class="nav-item">
               <a class="nav-button" aria-current="page" href="#" role = "button">Contacts</a>
@@ -34,41 +33,32 @@
 
     <div class="card lead-card" style="width: 36rem; text-align: left">
         <div class="card-body">
-     
-        <form class="form create-lead">
-        
+        <form class="form create-client">
+    
             <div class="form-group">
-                <label for="create-desc" >Description:</label>
-                <input class="form-input" type="text" id="create-desc" name = "create-desc" style="width: 400px">
+                <label for="client-name" >Name:</label>
+                <input class="form-input" type="text" id="client-name" name = "client-name" style="width: 400px">
             </div>
         
             <div class="form-group">
-                <label for="create-hours" >Total Hours:</label>
-                <input class="form-input" type="number" id="create-hours" name = "create-hours" style="width: 400px" />
+                <label for="client-phone" >Phone:</label>
+                <input class="form-input" type="number" id="client-phone" name = "client-phone" style="width: 400px" />
             </div>
             
             <div class="form-group">
-                <label for="create-revenue">Revenue:</label>
-                <input class="form-input"  type="number" id="create-revenue" name="create-revenue" style="width: 400px" />
+                <label for="client-address">Address:</label>
+                <input class="form-input"  type="text" id="client-address" name="client-address" style="width: 400px" />
             </div>
 
-            <p class="label">Select Client:</p>
-                <select class="form-select" >
-                    {{#each clients as |client|}}
-                    <option id = "option-client" value="{{client.id}}">{{client.name}}</option>
-                    {{/each}}
-                </select>
-
-            <p>Select Owner:</p>
-            <select class="form-select" >
-                    {{#each users as |user|}}
-                    <option id = "option-user" value="{{user.id}}">{{user.username}}</option>
-                    {{/each}}
-                </select>
+             <div class="form-group">
+                <label for="client-website">Website:</label>
+                <input class="form-input"  type="text" id="client-website" name="client-website" style="width: 400px" />
+            </div>
+            
             <button class="btn btn-sm btn-primary" >Create</button>
         </form>
         </div>
     </div>
 </div>
 
-<script src="../js/createlead.js"></script>  
+<script src="../js/create-client.js"></script>

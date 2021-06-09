@@ -14,10 +14,6 @@ Client.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isAlphanumeric: true,
-      },
     },
     phone: {
       type: DataTypes.DOUBLE,
@@ -31,16 +27,10 @@ Client.init(
     address: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isAlphanumeric: true,
-      },
     },
 
     website: {
       type: DataTypes.STRING,
-      validate: {
-        isUrl: true,
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,

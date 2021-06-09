@@ -16,7 +16,7 @@ const createLeadHandler = async (event) => {
 
   if (owner && client && description && hours && revenue) {
     // Send a POST request to the API endpoint
-    const response = await fetch("/api/leads/createlead", {
+    const response = await fetch("/api/leads/", {
       method: "POST",
       body: JSON.stringify({ description, hours, revenue, owner, client }),
       headers: { "Content-Type": "application/json" },
