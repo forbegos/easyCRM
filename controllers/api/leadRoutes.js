@@ -41,7 +41,7 @@ router.put("/update/:id", withAuth, async (req, res) => {
   }
 });
 
-router.post("/createlead", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newLead = await Lead.create(req.body);
     console.log(newLead);

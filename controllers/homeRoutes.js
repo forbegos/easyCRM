@@ -33,6 +33,14 @@ router.get("/clients", withAuth, async (req, res) => {
   }
 });
 
+router.get("/new-client", withAuth, async (req, res) => {
+  try {
+    res.render("create-client");
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
 // Leads -----------------------------------------------------------------------------------------
 router.get("/updatelead/:id", withAuth, async (req, res) => {
   try {
