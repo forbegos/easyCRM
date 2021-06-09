@@ -2,6 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { User, Task, Lead, Client } = require("../models");
 
+// Login -----------------------------------------------------------------------------------------
 router.get("/", async (req, res) => {
   try {
     // console.log("homeroute started");
@@ -12,6 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Clients -----------------------------------------------------------------------------------------
 router.get("/clients", withAuth, async (req, res) => {
   try {
     const clientData = await Client.findAll({
@@ -31,6 +33,7 @@ router.get("/clients", withAuth, async (req, res) => {
   }
 });
 
+// Leads -----------------------------------------------------------------------------------------
 router.get("/updatelead/:id", withAuth, async (req, res) => {
   try {
     const leadData = await Lead.findByPk(req.params.id, {
@@ -101,6 +104,11 @@ router.get("/createlead", withAuth, async (req, res) => {
   }
 });
 
+// Tasks -----------------------------------------------------------------------------------------
+
+// Contacts -----------------------------------------------------------------------------------------
+
+// Dasboard -----------------------------------------------------------------------------------------
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const leadData = await Lead.findAll({
