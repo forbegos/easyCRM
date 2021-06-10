@@ -55,6 +55,18 @@ router.get("/update-client/:id", withAuth, async (req, res) => {
   }
 });
 
+router.get("/delete-client/:id", withAuth, async (req, res) => {
+  try {
+    const clientData = await Client.findByPk(req.params.id);
+    const client = clientData.get({ plain: true });
+    res.render("delete-client", {
+      client,
+    });
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
 // Leads -----------------------------------------------------------------------------------------
 router.get("/updatelead/:id", withAuth, async (req, res) => {
   try {
