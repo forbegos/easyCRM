@@ -2,7 +2,29 @@
   {
     "description": "Front end development opportunity",
     "hours": 20,
+    "revenue": 250000,
+    "user_id": 1,
+    "client_id": 1
+  },
+  {
+    "description": "Back end development opportunity",
+    "hours": 150,
+    "revenue": 1250000,
     "user_id": 1,
     "client_id": 2
+  },
+  {
+    "description": "Full stack development opportunity",
+    "hours": 80,
+    "revenue": 600000,
+    "user_id": 1,
+    "client_id": 3
+  },
+  {
+    "description": "Web development opportunity",
+    "hours": 40,
+    "revenue": 500000,
+    "user_id": 1,
+    "client_id": 4
   }
 ]
