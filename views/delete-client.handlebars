@@ -8,7 +8,7 @@
           />
         </div>
         <div class="page-title">
-          <h3>Delete Lead</h3>
+          <h3>Delete Client</h3>
         </div>
           <ul class="nav navbar-nav">
             <li class="nav-item">
@@ -16,7 +16,7 @@
             </li>
             </li>
             <li class="nav-item">
-              <a class="nav-button" aria-current="page" href="./clients" role = "button">Clients</a>
+              <a class="nav-button" aria-current="page" href="/clients" role = "button">Clients</a>
             </li>
             <li class="nav-item">
               <a class="nav-button" aria-current="page" href="#" role = "button">Contacts</a>
@@ -28,19 +28,20 @@
         </div>
       </div>
     </nav>
-    <div class="display">
 
-<div class="card lead-card" style=" width: 36rem; text-align: left;">  
+<div class="display">
+
+  <div class="card lead-card" style=" width: 36rem; text-align: left;">  
     <div class="card-body">
-      <h5 class="card-title">Lead # {{lead.id}}</h5>
+      <h5 class="card-title">Client: {{client.name}}</h5>
 
-      <p class="description"><span>Description: </span>{{lead.description}}</p>
-      <p><span>Hours: </span>{{lead.hours}}</p>
-      <p><span>Revenue:</span>${{lead.revenue}}</p>
-      <p><span>Client: </span>{{lead.client.name}}</p>
+      <p><span>Phone: </span>{{client.phone}}</p>
+      <p><span>Address:</span>{{client.address}}</p>
+      <p><span>Website: </span>{{client.website}}</p>
     </div>
-          <button class="btn btn-sm btn-danger delete-button" data-id="{{lead.id}}">DELETE</button>
-
+          <button class="btn btn-sm btn-danger delete-button" data-id="{{client.id}}">DELETE</button>
   </div>
 
-<script src="../js/leaddelete.js"></script>
+</div>
+
+<script src="../js/delete-client.js" ></script>

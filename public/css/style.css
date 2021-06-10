@@ -6,6 +6,9 @@
   width: 500px;
   margin: 0 auto;
 }
+.delete-button {
+  margin-top: 20px;
+}
 
 .logo {
   display: flex;
