@@ -41,6 +41,20 @@ router.get("/new-client", withAuth, async (req, res) => {
   }
 });
 
+router.get("/update-client/:id", withAuth, async (req, res) => {
+  try {
+    const clientData = await Client.findByPk(req.params.id);
+    const client = clientData.get({ plain: true });
+    console.log(client);
+
+    res.render("update-client", {
+      client,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Leads -----------------------------------------------------------------------------------------
 router.get("/updatelead/:id", withAuth, async (req, res) => {
   try {

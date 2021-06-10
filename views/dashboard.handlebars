@@ -1,3 +1,5 @@
+
+  
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid" style="background-color: white; border-bottom: solid grey 1px; align-items: center;">
         <div class="dashboard-logo">
@@ -9,7 +11,6 @@
         </div>
         <div class="page-title">
           <h3>Dashboard</h3>
-          <p>User: {{user.username}} </p>
         </div>
           <ul class="nav navbar-nav">
             <li class="nav-item">
@@ -44,7 +45,6 @@
                   <th scope="col">Revenue</th>
 
                   <th scope="col">Client</th>
-                  <th scope="col">Owner</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -56,7 +56,6 @@
                   <td>{{lead.hours}} hrs.</td>
                   <td>${{lead.revenue}}</td>
                   <td>{{lead.client.name}}</td>
-                  <td>{{lead.user.username}}</td>
                   <td><a href="./updatelead/{{lead.id}}"><img src="/assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
                   <a href="./deletelead/{{lead.id}}"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
                 </tr>
@@ -75,11 +74,8 @@
                   <th scope="col">#</th>
                   <th scope="col">Task</th>
                   <th scope="col">Date Created</th>
-                  <th scope="col">Owner</th>
-
                   <th scope="col">Client</th>
-                                    <th scope="col">Action</th>
-
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -88,7 +84,6 @@
                   <td>{{task.id}}</td>
                   <td>{{task.content}}</td>
                   <td>{{format_date date}}</td>
-                  <td>{{task.user.username}}</td>
                   <td>{{task.client.name}}</td>
                   <td><a href="#"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
                   <a href="#"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
