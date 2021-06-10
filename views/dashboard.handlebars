@@ -41,7 +41,6 @@
                   <th scope="col">Description</th>
                   <th scope="col">Total Hours</th>
                   <th scope="col">Revenue</th>
-
                   <th scope="col">Client</th>
                   <th scope="col">Action</th>
                 </tr>
@@ -81,9 +80,9 @@
                 <tr>
                   <td>{{task.id}}</td>
                   <td>{{task.content}}</td>
-                  <td>{{format_date date}}</td>
+                  <td>{{format_date task.date}}</td>
                   <td>{{task.client.name}}</td>
-                  <td><a href="#"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
+                  <td><a href="./updatetask/{{task.id}}"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
                   <a href="#"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
                 </tr>
                 {{/each}}

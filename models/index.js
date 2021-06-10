@@ -3,10 +3,10 @@ const Lead = require("./Lead");
 const Task = require("./Task");
 const Client = require("./Client");
 
-User.hasMany(Task, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
-});
+// User.hasMany(Task, {
+//   foreignKey: "user_id",
+//   onDelete: "CASCADE",
+// });
 
 Task.belongsTo(User, {
   foreignKey: "user_id",

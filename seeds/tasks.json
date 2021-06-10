@@ -1,22 +1,18 @@
 [
   {
     "content": "Call Ben to confirm contract is a go.",
-    "user_id": 1,
-    "client_id": 2
+    "client_id": 1
   },
   {
     "content": "Call Leo to discuss specifics.",
-    "user_id": 1,
     "client_id": 2
   },
   {
     "content": "Call John to request PO.",
-    "user_id": 1,
-    "client_id": 2
+    "client_id": 3
   },
   {
     "content": "Call Zach to discuss invoicing.",
-    "user_id": 1,
-    "client_id": 2
+    "client_id": 4
   }
 ]
