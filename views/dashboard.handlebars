@@ -22,7 +22,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-button" aria-current="page" href="/" role = "button">Logout</a>
+              <a class="nav-button" aria-current="page" id = "logout" href="/" role = "button">Logout</a>
             </li>
           </ul>
         </div>
@@ -83,7 +83,7 @@
                   <td>{{format_date task.date}}</td>
                   <td>{{task.client.name}}</td>
                   <td><a href="./updatetask/{{task.id}}"><img src="../assets/gui_edit_icon_157165.png" style="width: 30px; height: 30px;" alt=""></a> 
-                  <a href="#"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
+                  <a href="./deletetask/{{task.id}}"><img src="../assets/delete-icon-image-15.jpg" style="width: 30px; height: 30px;" alt=""></a></td>
                 </tr>
                 {{/each}}
               </tbody>
@@ -92,3 +92,5 @@
 
       </div>
    </div>
+
+   <script src="../js/logout.js"></script> 

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid" style="background-color: white; border-bottom: solid grey 1px; align-items: center;">
+        <div class="dashboard-logo">
+          <img
+            src="../assets/easyCRMLogo.png"
+            style="height: 100px; padding-bottom: 10px;"
+            alt=""
+          />
+        </div>
+        <div class="page-title">
+          <h3>Delete Task</h3>
+        </div>
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="/dashboard" role = "button">Dashboard</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="/clients" role = "button">Clients</a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-button" aria-current="page" href="/" role = "button">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="display">
+
+    <div class="card lead-card" style=" width: 36rem; text-align: left;">  
+    <div class="card-body">
+      <h5 class="card-title">Delete Task #: {{task.id}}</h5>
+
+      <p><span>Content : </span>{{task.content}}</p>
+      <p><span>Date created :</span>{{task.date}}</p>
+      <p><span>Client: </span>{{task.client.name}}</p>
+    </div>
+            <button class="btn btn-sm btn-danger delete-button" data-id="{{task.id}}">DELETE</button>
+  </div>
+
+    </div>
+
+    <script src="../js/delete-task.js" ></script>
