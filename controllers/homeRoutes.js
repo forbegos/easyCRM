@@ -121,10 +121,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const leadData = await Lead.findAll({
       include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
+        // {
+        //   model: User,
+        //   attributes: ["username"],
+        // },
         {
           model: Client,
           attributes: ["name"],
@@ -133,10 +133,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
     });
     const taskData = await Task.findAll({
       include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
+        // {
+        //   model: User,
+        //   attributes: ["username"],
+        // },
         {
           model: Client,
           attributes: ["name"],
@@ -144,9 +144,9 @@ router.get("/dashboard", withAuth, async (req, res) => {
       ],
     });
 
-    const userData = await User.findAll();
+    // const userData = await User.findAll();
 
-    const users = userData.map((entry) => entry.get({ plain: true }));
+    // const users = userData.map((entry) => entry.get({ plain: true }));
     const leads = leadData.map((entry) => entry.get({ plain: true }));
     const tasks = taskData.map((entry) => entry.get({ plain: true }));
     // console.log(tasks);
@@ -155,7 +155,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     res.render("dashboard", {
       leads,
       tasks,
-      users,
+      // users,
     });
   } catch (err) {
     res.status(404).json(err);
