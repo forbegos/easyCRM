@@ -140,17 +140,32 @@ router.get("/createlead", withAuth, async (req, res) => {
 
 // Tasks -----------------------------------------------------------------------------------------
 
-// Contacts -----------------------------------------------------------------------------------------
+router.get("/updatetask/:id", withAuth, async (req, res) => {
+  try {
+    const newData = await Task.findByPk(req.params.id, {
+      include: [
+        {
+          model: Client,
+          attributes: ["name"],
+        },
+      ],
+    });
+    const task = newData.get({ plain: true });
+    console.log(task);
+
+    res.render("task-update", {
+      task,
+    });
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
 
 // Dasboard -----------------------------------------------------------------------------------------
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const leadData = await Lead.findAll({
       include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
         {
           model: Client,
           attributes: ["name"],
@@ -160,31 +175,21 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const taskData = await Task.findAll({
       include: [
         {
-          model: User,
-          attributes: ["username"],
-        },
-        {
           model: Client,
           attributes: ["name"],
         },
       ],
     });
 
-    const userData = await User.findAll();
-
-    const users = userData.map((entry) => entry.get({ plain: true }));
     const leads = leadData.map((entry) => entry.get({ plain: true }));
     const tasks = taskData.map((entry) => entry.get({ plain: true }));
-    // console.log(tasks);
-    // console.log(leads);
-    console.log(users);
+
     res.render("dashboard", {
       leads,
       tasks,
-      users,
     });
   } catch (err) {
-    res.status(404).json(err);
+    res.status(404).json({ message: "not running leads or tasks" });
   }
 });
 

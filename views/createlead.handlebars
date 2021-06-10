@@ -50,15 +50,12 @@
                 <input class="form-input"  type="number" id="create-revenue" name="create-revenue" style="width: 400px" />
             </div>
 
-            <p class="label">Select Client:</p>
-                <select class="form-select" >
-                    {{#each clients as |client|}}
-                    <option id = "option-client" value="{{client.id}}">{{client.name}}</option>
-                    {{/each}}
-                </select>
-
+                <div class="form-group">
+                <label for="client-id">Client ID:</label>
+                <input class="form-input"  type="number" id="client-id" name="client-id" style="width: 400px" />
+            </div>
             
-            <button class="btn btn-sm btn-primary" >Create</button>
+                        <button class="btn btn-sm btn-primary" >Create</button>
         </form>
         </div>
     </div>
