@@ -1,19 +1,17 @@
 const updateButtonHandler = async (event) => {
   event.preventDefault();
 
+  const client_id = document.querySelector("#client-id").value.trim();
   const description = document.querySelector("#update-desc").value.trim();
   const hours = document.querySelector("#update-hours").value.trim();
   const revenue = document.querySelector("#update-revenue").value.trim();
 
   const id = event.target.getAttribute("data-id");
-  console.log(id);
 
-  console.log(description, hours, revenue, id);
-
-  if (description && hours && revenue) {
+  if (description && hours && revenue && client_id) {
     const response = await fetch(`/api/leads/update/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ description, hours, revenue }),
+      body: JSON.stringify({ description, hours, revenue, client_id }),
       headers: { "Content-Type": "application/json" },
     });
 

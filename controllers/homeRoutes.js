@@ -169,6 +169,26 @@ router.get("/createtask", withAuth, async (req, res) => {
   }
 });
 
+router.get("/deletetask/:id", withAuth, async (req, res) => {
+  try {
+    const newData = await Task.findByPk(req.params.id, {
+      include: [
+        {
+          model: Client,
+          attributes: ["name"],
+        },
+      ],
+    });
+    const task = newData.get({ plain: true });
+
+    res.render("delete-task", {
+      task,
+    });
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
+
 // Dasboard -----------------------------------------------------------------------------------------
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
