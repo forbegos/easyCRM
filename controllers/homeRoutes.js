@@ -161,6 +161,14 @@ router.get("/updatetask/:id", withAuth, async (req, res) => {
   }
 });
 
+router.get("/createtask", withAuth, async (req, res) => {
+  try {
+    res.render("create-task");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Dasboard -----------------------------------------------------------------------------------------
 router.get("/dashboard", withAuth, async (req, res) => {
   try {

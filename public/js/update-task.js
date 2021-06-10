@@ -6,12 +6,16 @@ const updateButtonHandler = async (event) => {
   // const client_id = document.querySelector("#client_id").value.trim();
 
   const id = event.target.getAttribute("data-id");
+  var d = new Date();
+  var date = d.toISOString();
+  console.log(date);
 
   if (content) {
     const response = await fetch(`/api/tasks/${id}`, {
       method: "PUT",
       body: JSON.stringify({
         content,
+        date,
         // client_id,
       }),
       headers: { "Content-Type": "application/json" },
