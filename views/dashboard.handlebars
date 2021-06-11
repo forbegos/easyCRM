@@ -91,6 +91,15 @@
                         <a href="./createtask" class="btn btn-success">New Task</a>
 
       </div>
-   </div>
+        </div>
 
+          <div class="dev-jokes">
+             <p id = "devjokes"></p>
+             <script>
+             const Joke = require("awesome-dev-jokes");
+             const devjoke = Joke.getRandomJoke();
+              document.getElementById("#devjokes").innerHTML = devjoke;
+            </script>
+       
+</div>
    <script src="../js/logout.js"></script> 
