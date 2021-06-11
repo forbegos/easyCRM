@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const withAuth = require("../utils/auth");
-const { User, Task, Lead, Client } = require("../models");
+const { Task, Lead, Client } = require("../models");
 
 // Login -----------------------------------------------------------------------------------------
 router.get("/", async (req, res) => {
@@ -16,14 +16,7 @@ router.get("/", async (req, res) => {
 // Clients -----------------------------------------------------------------------------------------
 router.get("/clients", withAuth, async (req, res) => {
   try {
-    const clientData = await Client.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    });
+    const clientData = await Client.findAll();
     const clients = clientData.map((entry) => entry.get({ plain: true }));
     res.render("client", {
       clients,
@@ -73,10 +66,6 @@ router.get("/updatelead/:id", withAuth, async (req, res) => {
     const leadData = await Lead.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ["username"],
-        },
-        {
           model: Client,
           attributes: ["name"],
         },
@@ -97,10 +86,6 @@ router.get("/deletelead/:id", withAuth, async (req, res) => {
   try {
     const leadData = await Lead.findByPk(req.params.id, {
       include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
         {
           model: Client,
           attributes: ["name"],
