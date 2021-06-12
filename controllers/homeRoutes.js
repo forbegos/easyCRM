@@ -105,19 +105,7 @@ router.get("/deletelead/:id", withAuth, async (req, res) => {
 
 router.get("/createlead", withAuth, async (req, res) => {
   try {
-    const clientData = await Client.findAll();
-    const userData = await User.findAll();
-
-    const clients = clientData.map((entry) => entry.get({ plain: true }));
-    const users = userData.map((entry) => entry.get({ plain: true }));
-
-    console.log(clients);
-    console.log(users);
-
-    res.render("createlead", {
-      clients,
-      users,
-    });
+    res.render("createlead");
   } catch (err) {
     res.status(404).json(err);
   }
